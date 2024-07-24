@@ -1,6 +1,7 @@
-export default function EventPage() {
-    return 
+export default function Home() {
+    return(
     <main>
         yo
     </main>
+    );
 }

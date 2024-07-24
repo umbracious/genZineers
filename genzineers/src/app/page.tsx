@@ -1,6 +1,3 @@
-import Image from "next/image";
-import tpdoLogo from "./images/logo.jpg";
-
 export default function Home() {
   return (
     <main>
@@ -19,12 +16,7 @@ export default function Home() {
         <div className="outline outline-4 outline-gray-200 hover:outline-gray-400 hover:shadow-2xl px-8 py-8 rounded-xl">
           <h1 className="text-xl mb-8">FOLLOW FOR MORE EDUCATIONAL CONTENT</h1>
           <div className="flex items-center justify-center">
-            <Image
-              src={tpdoLogo}
-              width={100}
-              height={100}
-              alt="Potential Dropout Logo"
-            />
+            https://beacons.ai/thepotentialdropout
           </div>
           
         </div>
