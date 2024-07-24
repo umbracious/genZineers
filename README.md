@@ -4,6 +4,7 @@ Official repo for the genZineers tutoring events website
 
 # TODO
 
+[x] speed up build process
 [] display mock data
 [] set up database
 [] set up adding and removing data into database
