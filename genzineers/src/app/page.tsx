@@ -1,26 +1,35 @@
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../public/logo.svg";
+
 export default function Home() {
   return (
-    <main>
-      <div className="h-screen flex items-center justify-center bg-fixed bg-[url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg')] bg-origin-border bg-top">
-        <div>
-          <button className="text-5xl text-white hover:text-gray-200 px-12 py-8 outline outline-white hover:outline-gray-200 outline-8 rounded-full">VIEW EVENTS</button>
-        </div>
+    <main className="h-screen flex flex-col items-center justify-center space-y-2 bg-cover bg-[url('https://girlknowstech.com/wp-content/uploads/2020/01/allowed-cheat-sheet-ex4.png')] bg-neutral-800 bg-blend-overlay bg-origin-border bg-top">
+      
+      
+      <div>
+        <Image
+          src={Logo}
+          alt="GENZINEERS"
+          width={1300}
+          height={300}
+        />
       </div>
 
-      <div className="w-screen py-8 flex flex-col items-center justify-around space-y-8 bg-white">
-        <div className="flex items-center flex-col">
-          <h1 className="text-xl">OUR MISSION</h1>
-          <p className="pt-8 text-md w-2/3 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus libero magnam cum inventore provident facilis at aut alias id totam! Maiores dolores cumque at totam neque magni, optio exercitationem officia, nobis doloribus qui tempore consectetur perferendis ullam corrupti eaque! Labore eius incidunt hic, numquam ullam illo asperiores itaque! Dolorum sit temporibus nam magnam rerum qui velit impedit perferendis similique nulla!</p>
-        </div>
-
-        <div className="outline outline-4 outline-gray-200 hover:outline-gray-400 hover:shadow-2xl px-8 py-8 rounded-xl">
-          <h1 className="text-xl mb-8">FOLLOW FOR MORE EDUCATIONAL CONTENT</h1>
-          <div className="flex items-center justify-center">
-            https://beacons.ai/thepotentialdropout
-          </div>
-          
-        </div>
+      <div className="antialiased text-4xl font-extrabold text-white flex items-center flex-col justify-center py-4">
+        <div>Exciting STEM crash courses by geniuses that you love and who love you back.</div>
+        <div>And cool special events for engineering students.</div>
       </div>
+      
+      
+      <div>
+        <button className="text-6xl text-white antialiased hover:text-gray-200 p-8 bg-yellow-400 hover:bg-yellow-600 rounded-full"><Link href="/events/">ALL EVENTS AND CRASH COURSES</Link></button>
+      </div>        
+
+      <div className="flex items-center max-w-lg mx-auto">
+          <input type="text" id="voice-search" className="font-medium text-xl bg-transparent border border-white border-4 text-white block w-full ps-10 p-1.5 placeholder-slate-200" placeholder="Search for a course..." required />
+      </div>
+    
     </main>
   );
 }

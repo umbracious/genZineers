@@ -1,7 +1,9 @@
-export default function Home() {
+import Events from "./events";
+
+export default function EventPage() {
     return(
-    <main>
-        yo
+    <main className="bg-black h-screen text-white">
+        <Events/>
     </main>
     );
 }
