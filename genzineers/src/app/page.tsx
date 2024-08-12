@@ -4,7 +4,7 @@ import Logo from "../../public/logo.svg";
 
 export default function Home() {
   return (
-    <main className="h-screen flex flex-col items-center justify-center space-y-2 bg-cover bg-[url('https://girlknowstech.com/wp-content/uploads/2020/01/allowed-cheat-sheet-ex4.png')] bg-neutral-800 bg-blend-overlay bg-origin-border bg-top">
+    <main className="h-screen flex flex-col items-center justify-center space-y-2 bg-cover bg-[url('../../public/background.png')] bg-neutral-800 bg-blend-overlay bg-origin-border bg-top">
       
       
       <div>
@@ -27,7 +27,7 @@ export default function Home() {
       </div>        
 
       <div className="flex items-center max-w-lg mx-auto">
-          <input type="text" id="voice-search" className="font-medium text-xl bg-transparent border border-white border-4 text-white block w-full ps-10 p-1.5 placeholder-slate-200" placeholder="Search for a course..." required />
+          <input type="text" id="search" className="font-medium text-xl bg-transparent border border-white border-4 text-white block w-full ps-10 p-1.5 placeholder-slate-200" placeholder="Search for a course..." required />
       </div>
     
     </main>
