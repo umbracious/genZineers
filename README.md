@@ -82,28 +82,16 @@ Other pages to potentially implement in the future:
 
 Todo list to get the website running as soon as possible. More will be added as we go.
 
-[x] create repo
-
-[x] create readme
-
-[x] speed up build process
-
-[x] create home page
-
-[x] set up database
-
-[x] create events page
-
-[] display data on events page
-
-[] set up adding and removing data into database
-
-[] implement event searching on home and event pages
-
-[] set up authentification and lock event management behind authentification
-
-[] add event-specific page routing
-
-[] set up payment
-
-[] make the website mobile friendly
+- [x] create repo
+- [x] create readme
+- [x] speed up build process
+- [x] create home page
+- [x] set up database
+- [x] create events page
+- [ ] display data on events page
+- [ ] set up adding and removing data into database
+- [ ] implement event searching on home and event pages
+- [ ] set up authentification and lock event management behind authentification
+- [ ] add event-specific page routing
+- [ ] set up payments
+- [ ] make the website mobile friendly (responsive)
