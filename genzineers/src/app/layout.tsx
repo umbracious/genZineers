@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={anton.className}>
+      <body className={`${anton.className} bg-black text-white`}>
         <Navbar/>
         {children}
       </body>

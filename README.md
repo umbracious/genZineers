@@ -58,6 +58,9 @@ Vercel is the chosen platform for the website hosting. It's very easy to work wi
 ### NextAuth
 NextAuth is a free open source authentification tool. It allows for a lot of flexibility, allowing users to create accounts with any OAuth authentification service. 
 
+### Stripe
+Stripe is what we are using for our payment processor. It is easy to integrate, has very little fees, and has a clean interface on its components.
+
 # Pages
 Pages should follow [the Canva layout](https://www.canva.com/design/DAGKF-PnoRs/WBsia219EhA2RdZVPgQ26w/edit) as much as possible.
 
@@ -88,7 +91,8 @@ Todo list to get the website running as soon as possible. More will be added as 
 - [x] create home page
 - [x] set up database
 - [x] create events page
-- [ ] display data on events page
+- [x] display data on events page
+- [x] create contact us page
 - [ ] set up adding and removing data into database
 - [ ] implement event searching on home and event pages
 - [ ] set up authentification and lock event management behind authentification
