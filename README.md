@@ -98,4 +98,8 @@ Todo list to get the website running as soon as possible. More will be added as 
 - [ ] set up authentification and lock event management behind authentification
 - [ ] add event-specific page routing
 - [ ] set up payments
-- [ ] make the website mobile friendly (responsive)
+- [ ] auto generate zoom links for the events upon payment
+- [ ] archive events that are completed
+- [ ] set up error handling
+- [ ] make the website mobile friendly
+- [ ] add accessibility features
