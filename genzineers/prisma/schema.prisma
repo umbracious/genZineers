@@ -1,38 +1,32 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {
-  userId Int @id @default(autoincrement())
-  email String @unique
-  name String @db.VarChar(255)
-  eventsHosted Event[] @relation("Speaker")
-  eventsJoined Event[] @relation("Listener")
-  createdAt DateTime @default(now())
-  role Role @default(USER)
+  userId       Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String   @db.VarChar(255)
+  createdAt    DateTime @default(now())
+  role         Role     @default(USER)
+  eventsJoined Event[]  @relation("Listener")
+  eventsHosted Event[]  @relation("Speaker")
 }
 
 model Event {
-  eventId Int @id @default(autoincrement()) 
-  title String @db.VarChar(255)
-  createdAt DateTime @default(now())
-  eventTime DateTime
+  eventId     Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  eventTime   DateTime
   description String
-  price Decimal @db.Decimal(6, 2)
-  speakers User[] @relation("Speaker")
-  listeners User[] @relation("Listener")
+  price       Decimal  @db.Decimal(6, 2)
+  listeners   User[]   @relation("Listener")
+  speakers    User[]   @relation("Speaker")
 }
 
 enum Role {
