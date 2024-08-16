@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/logo.svg";
+import SignIn from "@/components/sign-in";
 
 export default function Navbar () {
     return (
@@ -22,10 +23,9 @@ export default function Navbar () {
                     <div><Link href="https://beacons.ai/thepotentialdropout">The Potential Dropout</Link></div>
                     <div><Link href="/contactus/">Contact Us</Link></div>
                 </div>
-
-                <div className="flex space-x-4 items-center">
-                    <Link href="#"><button className="bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-2 py-1 rounded shadow-md">Sign up</button></Link>
-                    <Link href="#" className="text-white hover:text-slate-100 hover:underline underline-offset-2">Log in</Link>
+                
+                <div>
+                    <SignIn/>
                 </div>
             </div>
         </nav>
