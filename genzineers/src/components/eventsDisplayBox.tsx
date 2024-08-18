@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import sql from "@vercel/postgres";
 
 export default async function Events() {
 
@@ -11,10 +10,10 @@ export default async function Events() {
         <div className="flex flex-col w-3/5 h-[90%] border-4 rounded-3xl border-white p-4 space-y-2">
             
             {events.map((ev) => (
-                <div key={ev.eventId} className="flex w-full bg-yellow-400 justify justify-between rounded-xl px-8 py-4">
-                    <div>{ev.title}</div>
+                <div key={ev.eventId} className="w-full grid grid-cols-3 grid-rows-1 w-full bg-yellow-400 justify justify-items-center rounded-xl px-8 py-4">
+                    <div className="justify-self-start">{ev.title}</div>
                     <div>{ev.eventTime.toDateString()}</div>
-                    <div>{ev.price.toDP(2).toString()}$</div>
+                    <div className="justify-self-end">{ev.price.toDP(2).toString()}$</div>
                 </div>
             ))}
 

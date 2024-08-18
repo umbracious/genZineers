@@ -1,4 +1,4 @@
-import Events from "./events";
+import Events from "@/components/eventsDisplayBox"
 
 export default function EventPage() {
     return(
