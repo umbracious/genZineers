@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Anton } from "next/font/google";
 import "./globals.css";
-import Navbar from "./navbar";
+import Navbar from "@/components/navbar";
 
 const anton = Anton({ subsets: ["latin"], weight:"400" });
 
