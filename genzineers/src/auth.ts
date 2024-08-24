@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 import { PrismaNeon } from "@prisma/adapter-neon"
 import { Pool } from "@neondatabase/serverless"
+import Resend from "@auth/core/providers/resend"
 import GitHub from "@auth/core/providers/github"
 
 const neon = new Pool({connectionString: process.env.POSTGRES_PRISMA_URL })
@@ -11,5 +12,9 @@ const prisma = new PrismaClient({adapter})
  
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [GitHub],
+  providers: [Resend({
+    from: "noreply@genzineers.com"
+  }),
+  GitHub
+],
 })

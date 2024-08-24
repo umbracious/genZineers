@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
@@ -8,23 +8,22 @@ datasource db {
   url       = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
- 
+
 model User {
-  id            String          @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
-  email         String          @unique
+  email         String    @unique
   emailVerified DateTime?
   image         String?
+  role          Role      @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
-  role         Role     @default(USER)
-  eventsJoined Event[]  @relation("Listener")
-  eventsHosted Event[]  @relation("Speaker")
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  eventsJoined  Event[]   @relation("Listener")
+  eventsHosted  Event[]   @relation("Speaker")
 }
- 
+
 model Account {
   userId            String
   type              String
@@ -37,30 +36,27 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
- 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@id([provider, providerAccountId])
 }
- 
+
 model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
- 
+
 model VerificationToken {
   identifier String
   token      String
   expires    DateTime
- 
+
   @@id([identifier, token])
 }
 
