@@ -1,9 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-import { redirect } from "next/navigation";
 
 export default async function handler(req:any, res:any) {
     const { title, eventTime, description, price} = JSON.parse(req.body);
-    const prisma = new PrismaClient({ log: ["query"] });
+    const prisma = new PrismaClient();
     try {
             const event = await prisma.event.create({
                 data:{
