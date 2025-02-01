@@ -9,7 +9,7 @@ import Beacons from "../../../public/beacons.png"
 
 export default function ContactUs() {
     return(
-    <main className="w-screen h-screen flex flex-col items-center justify-center space-y-16">
+    <main className="w-screen flex flex-col items-center justify-center space-y-16">
         <div className="flex flex-col items-center space-y-8">
             <div className="text-yellow-400 text-5xl drop-shadow-glow">CONTACT US</div>
         

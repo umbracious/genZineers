@@ -6,4 +6,25 @@
   .text-balance {
     text-wrap: balance;
   }
+
+/* 16px default */
+  @media (max-width: 1198px) {
+    html {
+      font-size:14px;
+    }
+  }
+   /* for rotated phones */
+  @media (max-width: 900px) and (max-height:400px) {
+    html {
+      font-size:24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size:12px;
+    }
+  }
+
+
 }

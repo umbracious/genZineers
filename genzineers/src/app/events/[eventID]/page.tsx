@@ -1,38 +1,54 @@
 import { PrismaClient } from "@prisma/client";
 
-export default async function EventDescriptionPage({ params } : { params: { eventID: string } }) {
+export default async function EventDescriptionPage({
+  params,
+}: {
+  params: { eventID: string };
+}) {
+  const prisma = new PrismaClient();
+  const event = await prisma.event.findUniqueOrThrow({
+    where: {
+      eventId: +params.eventID,
+    },
+  });
 
-    const prisma = new PrismaClient();
-    const event = await prisma.event.findUniqueOrThrow({
-        where: {
-            eventId: +params.eventID,
-        }
-    })
+  return (
+    <div className="flex flex-col items-center justify-center w-screen h-screen gap-3 pt-5">
+      <h1 className="w-full text-5xl text-center text-neutral-400">
+        {event.title}
+      </h1>
 
-    return(
-        <div className="flex flex-col items-center justify-center w-screen h-screen">
-
-            <h1 className="w-full text-5xl text-center text-neutral-400">{event.title}</h1>
-
-            <div className="h-3/4 w-full flex">
-                <div className="w-1/2">
-                    <div className="w-full h-3/4 p-8">
-                        <div className="w-full h-full border border-white rounded-3xl p-8">Intro to the tutor</div>
-                    </div>
-                    <div className="h-1/4 flex flex-col items-center justify-around">
-                        <div className="text-3xl">{event.eventTime.toDateString()} ON ZOOM</div>
-                        <div className="text-3xl">${event.price.toString()} USD</div>
-                        <button className="text-5xl text-white antialiased hover:text-gray-200 py-4 px-8 bg-yellow-400 hover:bg-yellow-600 rounded-full">BOOK TICKET NOW</button>
-                    </div>
-                    
-                </div>
-                
-                <div className="w-1/2 border border-white rounded-3xl mt-8 mr-8">
-                    <h2 className="h-[10%] text-5xl p-8 text-center">COURSE OUTLINE AND DESCRIPTION</h2>
-                    <div className="h-[90%] text-right p-8">{event.description}</div>
+      <div className="h-5/6 w-full flex gap-5 px-5">
+        <div className="w-3/4 border-yellow-500 border-2 rounded-xl p-3">
+          <div className="text-4xl w-full flex justify-center">
+            Course Description
+          </div>
+          <div className="flex flex-col h-[95%] gap-4">
+            <div className="flex gap-3 px-2 h-[90%] ">
+              <div className="flex w-3/4 h-full border-r-white border-r-2">
+                Description and intro
+              </div>
+              <div className="flex w-1/4 h-full">Gallery</div>
+            </div>
+            <div> {/* DIV FOR STRIPE STUFF */}
+                <div className="flex flex-row-reverse ">
+              <button className="text-3xl text-white antialiased py-2 px-10 bg-yellow-500 hover:bg-yellow-600 rounded-3xl max-md:hidden">
+                BOOK NOW
+              </button>
                 </div>
             </div>
-            
+          </div>
         </div>
-    );
+        <div className="flex flex-col w-1/4 border-yellow-500 border-2 rounded-xl p-3 gap-2">
+          <div className="text-4xl w-full flex justify-center">
+            Tutor Description
+          </div>
+          <div>
+
+          Description and intro
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

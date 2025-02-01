@@ -8,7 +8,7 @@ export default function SignIn() {
         await signIn()
       }}
     >
-      <button type="submit" className="bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-2 py-1 rounded shadow-md">Sign In</button>
+      <button type="submit" className="bg-gradient-to-b from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-2 py-1 text-lg rounded shadow-md">Sign In</button>
     </form>
   )
 } 
