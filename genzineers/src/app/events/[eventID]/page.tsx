@@ -26,10 +26,13 @@ export default async function EventDescriptionPage({
               <div className="flex w-1/4 h-full">Gallery</div>
             </div>
             <div> {/* DIV FOR STRIPE STUFF */}
-                <div className="flex flex-row-reverse ">
-              <button className="text-3xl text-white antialiased py-2 px-10 bg-yellow-500 hover:bg-yellow-600 rounded-3xl max-md:hidden">
-                BOOK NOW
-              </button>
+                <div className="flex flex-row-reverse">
+                  <form action="/api/checkout_sessions" method="post">
+                    <input type="hidden" name="price" value={event.default_price}/>
+                    <button className="text-3xl text-white antialiased py-2 px-10 bg-yellow-500 hover:bg-yellow-600 rounded-3xl max-md:hidden">
+                      BOOK NOW
+                    </button>
+                  </form>
                 </div>
             </div>
           </div>
