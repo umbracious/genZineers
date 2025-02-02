@@ -1,21 +1,16 @@
-import { PrismaClient } from "@prisma/client";
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function EventDescriptionPage({
   params,
 }: {
   params: { eventID: string };
 }) {
-  const prisma = new PrismaClient();
-  const event = await prisma.event.findUniqueOrThrow({
-    where: {
-      eventId: +params.eventID,
-    },
-  });
+  const event = await stripe.products.retrieve(params.eventID);
 
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen gap-3 pt-5">
       <h1 className="w-full text-5xl text-center text-neutral-400">
-        {event.title}
+        {event.name}
       </h1>
 
       <div className="h-5/6 w-full flex gap-5 px-5">

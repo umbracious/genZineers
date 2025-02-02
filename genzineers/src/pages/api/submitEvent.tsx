@@ -1,20 +1,23 @@
-import { PrismaClient } from "@prisma/client";
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req:any, res:any) {
     const { title, eventTime, description, price} = JSON.parse(req.body);
-    const prisma = new PrismaClient();
+
     try {
-            const event = await prisma.event.create({
-                data:{
-                    title: title,
-                    eventTime: new Date(eventTime),
-                    description: description,
-                    price: price,
-                }
-            })
-        } catch (err) {
-            console.error(err);
-            res.status(500).send(err);
-        }
+        const product = await stripe.products.create({
+            name: title,
+            description: description,
+            default_price_data: {
+                unit_amount: price,
+                currency: 'usd'
+            },
+            metadata: {
+                event_time: eventTime
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send(err);
+    }
     res.status(200).send("Success");
 }
