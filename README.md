@@ -81,6 +81,10 @@ Other pages to potentially implement in the future:
 * Analytics page
 * And many more!
 
+# Website
+
+The temporary link for the website for testing purposes is: https://gen-zineers.vercel.app/
+
 # TODO
 
 Todo list to get the website running as soon as possible. More will be added as we go.
