@@ -81,6 +81,10 @@ Other pages to potentially implement in the future:
 * Analytics page
 * And many more!
 
+# Website
+
+The temporary link for the website for testing purposes is: https://gen-zineers.vercel.app/
+
 # TODO
 
 Todo list to get the website running as soon as possible. More will be added as we go.
@@ -93,13 +97,13 @@ Todo list to get the website running as soon as possible. More will be added as 
 - [x] create events page
 - [x] display data on events page
 - [x] create contact us page
-- [ ] set up adding and removing data into database
+- [x] set up adding and removing data into database
 - [ ] implement event searching on home and event pages
-- [ ] set up authentification and lock event management behind authentification
-- [ ] add event-specific page routing
-- [ ] set up payments
+- [x] set up authentification and lock event management behind authentification
+- [x] add event-specific page routing
+- [x] set up payments
 - [ ] auto generate zoom links for the events upon payment
 - [ ] archive events that are completed
 - [ ] set up error handling
-- [ ] make the website mobile friendly
+- [x] make the website mobile friendly
 - [ ] add accessibility features
