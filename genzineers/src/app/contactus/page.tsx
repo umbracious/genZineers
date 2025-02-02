@@ -9,24 +9,24 @@ import Beacons from "../../../public/beacons.png"
 
 export default function ContactUs() {
     return(
-    <main className="w-screen flex flex-col items-center justify-center space-y-16">
+    <main className="w-screen flex flex-col px-4 h-screen items-center justify-center space-y-16">
         <div className="flex flex-col items-center space-y-8">
-            <div className="text-yellow-400 text-5xl drop-shadow-glow">CONTACT US</div>
+            <div className="text-yellow-400 text-3xl drop-shadow-glow">CONTACT US</div>
         
-            <div className="text-2xl">genzineers@gmail.com</div>
+            <div className="text-xl">genzineers@gmail.com</div>
         </div>
         
         <div className="flex flex-col items-center space-y-8">
-            <div className="text-yellow-400 text-5xl drop-shadow-glow">NEED HELP FOR ANYTHING?</div>
+            <div className="text-yellow-400 text-3xl drop-shadow-glow text-center">NEED HELP FOR ANYTHING?</div>
 
-            <div className="text-2xl">genzineers.help@gmail.com</div>
+            <div className="text-xl text-center">genzineers.help@gmail.com</div>
         </div>
 
         <div className="flex flex-col items-center space-y-8">
-            <div className="text-yellow-400 text-5xl drop-shadow-glow">
+            <div className="text-yellow-400 text-3xl drop-shadow-glow text-center">
                ALL OUR PAGES 
             </div>
-            <div className="text-2xl">
+            <div className="text-xl text-center">
                 @genzineers on all social media, or click on the icons below
             </div>
             <div>
