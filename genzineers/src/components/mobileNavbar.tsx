@@ -5,8 +5,7 @@ import Image from "next/image";
 
 export default function MobileNavbar() {
   const [click, setClick] = useState(false);
-  const handleClick = () => (click ? setClick(false) : setClick(true));
-  const stopPropagation = (event: any) => event.stopPropagation();
+  const handleClick = () => setClick((click)=>!click);
   return (
     <div className="fixed md:hidden">
       <nav className="bg-black w-full top-0 fixed left-0 right-0 ">
@@ -46,20 +45,21 @@ export default function MobileNavbar() {
         </div>
       </nav>
       {click && (
-        <div
-          className="bg-neutral-950 w-screen h-screen bg-opacity-90"
-          onClick={handleClick}
-        >
-          <div className="w-screen flex flex-row-reverse fixed ">
+          <div className="w-screen fixed ">
             <div
-              className="flex flex-col  gap-3 py-5 px-6 w-[60vw] h-screen bg-black float-right"
-              onClick={stopPropagation}
-            >
-              <div className="text-3xl">Events</div>
-              <div className="text-3xl">The Potential Dropout</div>
-              <div className="text-3xl">Contact Us</div>
+              className="flex flex-col w-screen h-screen bg-black "
+            ><div className="px-10 py-5 flex justify-between">
+              <Image src={Logo} width={100} alt="genzineers" />
+              <button onClick={handleClick}>
+              <svg fill="#ffffff" height="50px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xmlSpace="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"></path> </g></svg>
+              </button>
             </div>
-          </div>
+            <div className="flex justify-center px-10 gap-2 flex-col text-center ">
+              <div className="text-3xl bg-yellow-400 p-3">Events</div>
+              <div className="text-3xl p-3">The Potential Dropout</div>
+              <div className="text-3xl p-3">Contact Us</div>
+              </div>
+            </div>
         </div>
       )}
     </div>

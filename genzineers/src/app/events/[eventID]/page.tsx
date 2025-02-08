@@ -8,7 +8,9 @@ export default async function EventDescriptionPage({
   const event = await stripe.products.retrieve(params.eventID);
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen gap-3 pt-5">
+    <>
+    {/* PC VERSION OF THE PAGE */}
+    <div className="flex flex-col items-center justify-center w-screen h-screen gap-3 pt-5 max-md:hidden">
       <h1 className="w-full text-5xl text-center text-neutral-400">
         {event.name}
       </h1>
@@ -20,10 +22,9 @@ export default async function EventDescriptionPage({
           </div>
           <div className="flex flex-col h-[95%] gap-4">
             <div className="flex gap-3 px-2 h-[90%] ">
-              <div className="flex w-3/4 h-full border-r-white border-r-2">
+              <div className="flex w-full h-full">
                 Description and intro
               </div>
-              <div className="flex w-1/4 h-full">Gallery</div>
             </div>
             <div> {/* DIV FOR STRIPE STUFF */}
                 <div className="flex flex-row-reverse">
@@ -48,5 +49,13 @@ export default async function EventDescriptionPage({
         </div>
       </div>
     </div>
+
+    {/* MOBILE VERSION OF THE PAGE */}
+    <div className="w-screen h-screen pt-24">
+    <h1 className="w-full text-5xl text-center text-neutral-400">
+        {event.name}
+      </h1>
+    </div>
+    </>
   );
 }
