@@ -1,17 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../public/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function MobileNavbar() {
+  const location = usePathname();
   const [click, setClick] = useState(false);
+  const [path, setPath] = useState(location);
   const handleClick = () => setClick((click)=>!click);
+  useEffect(() => {
+    setPath(location);
+    setClick(false);
+  }, [location]);
   return (
-    <div className="fixed md:hidden">
+    <div className="fixed md:hidden z-50">
       <nav className="bg-black w-full top-0 fixed left-0 right-0 ">
         <div className="px-4 py-3 flex justify-between w-full ">
           {/* this image should be a monogram, not a logo. */}
-          <Image src={Logo} width={100} alt="genzineers" />
+          <Link href="/"><Image src={Logo} width={100} alt="genzineers" /></Link>
           <button onClick={handleClick}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,9 +63,8 @@ export default function MobileNavbar() {
               </button>
             </div>
             <div className="flex justify-center px-10 gap-2 flex-col text-center ">
-              <div className="text-3xl bg-yellow-400 p-3">Events</div>
-              <div className="text-3xl p-3">The Potential Dropout</div>
-              <div className="text-3xl p-3">Contact Us</div>
+              <Link href="/events"><div className={`text-3xl p-3 ${path === "/events" ? "bg-yellow-400" : ""}`}>Events</div></Link>
+              <Link href="/contactus"><div className={`text-3xl p-3 ${path === "/contactus" ? "bg-yellow-400" : ""}`}>Contact Us</div></Link>
               </div>
             </div>
         </div>
