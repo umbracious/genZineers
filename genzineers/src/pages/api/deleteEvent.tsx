@@ -1,12 +1,9 @@
-import { PrismaClient } from "@prisma/client";
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req:any, res:any) {
     const { eventId } = JSON.parse(req.body);
-    const prisma = new PrismaClient();
     try {
-            const event = await prisma.event.delete({
-                where: { eventId: eventId }
-            })
+            const deleted = await stripe.products.del(eventId);
         } catch (err) {
             console.error(err);
             res.status(500).send(err);

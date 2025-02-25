@@ -1,15 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 
 export default async function handler(req:any, res:any) {
-    let event;
+
     const { id } = JSON.parse(req.body);
-    const prisma = new PrismaClient();
     try {
-            event = await prisma.event.findUnique({
-                where: {
-                    eventId: id
-                }
-            })
+            const event = await stripe.products.retrieve(id);            
         } catch (err) {
             console.error(err);
             res.status(500).send(err);
