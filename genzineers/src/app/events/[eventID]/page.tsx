@@ -120,7 +120,7 @@ export default async function EventDescriptionPage({
             </div>
             <form action="/api/checkout_sessions" method="post">
               <input type="hidden" name="price" value={event.default_price} />
-              <button className="px-20 py-3 bg-yellow-600 rounded-xl">
+              <button className="px-24 py-3 bg-yellow-600 rounded-xl">
                 ENROLL
               </button>
             </form>
