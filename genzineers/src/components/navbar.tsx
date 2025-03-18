@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/logo.svg";
 import SignIn from "@/components/signIn";
+import SignInButton from "./signInButton";
 
 export default function Navbar () {
     return (
@@ -24,7 +25,7 @@ export default function Navbar () {
                 </div>
                 {/* MAYBE MAKE A USER ICON INDICATING LOGIN ON TOP RIGHT INSTEAD OF A SIGN IN BUTTON */}
                 <div> 
-                    <SignIn/>
+                    <SignInButton/>
                 </div>
             </div>
         </nav>
