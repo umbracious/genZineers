@@ -7,7 +7,7 @@ import SignInButton from "./signInButton";
 export default function Navbar () {
     return (
         <nav className="bg-black w-full fixed top-0 left-0 right-0 z-50 max-md:hidden">
-            <div className="text-white w-full flex flex-nowrap items-center justify-between px-8 py-2">
+            <div className="text-white w-full flex flex-nowrap items-center justify-between h-10 px-8">
                 <div>
                     <Link href="/">
                         <Image
@@ -24,7 +24,7 @@ export default function Navbar () {
                     <div><Link href="/contactus/">Contact Us</Link></div>
                 </div>
                 {/* MAYBE MAKE A USER ICON INDICATING LOGIN ON TOP RIGHT INSTEAD OF A SIGN IN BUTTON */}
-                <div> 
+                <div className="flex flex-col"> 
                     <SignInButton/>
                 </div>
             </div>
