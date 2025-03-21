@@ -56,17 +56,20 @@ export default function EventInfo({
               <div>
                 {" "}
                 {/* DIV FOR STRIPE STUFF */}
-                <div className="flex flex-row-reverse">
+                <div className="flex flex-row-reverse items-center">
+                  <div className="flex flex-col-reverse items-center text-3xl gap-2">
                   <form action="/api/checkout_sessions" method="post">
                     <input
                       type="hidden"
                       name="price"
                       value={event.default_price}
                     />
-                    <button className="text-3xl text-white antialiased py-2 px-10 bg-yellow-500 hover:bg-yellow-600 rounded-3xl max-md:hidden">
-                      BOOK NOW
+                    <button className="text-3xl text-white antialiased py-2 px-16 bg-yellow-500 hover:bg-yellow-600 rounded-3xl max-md:hidden">
+                      BOOK $20.00
                     </button>
                   </form>
+                  <div>27. Mar 2025</div>
+                  </div>
                 </div>
               </div>
             </div>
