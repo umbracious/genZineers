@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function EventInfo({
   event
@@ -30,12 +30,14 @@ export default function EventInfo({
     setPage(id);
   }
 
-  // useEffect(()=>{
-  //   console.log(event);
-  // }, [event])
-
   const [page, setPage] = useState(0);
-
+  // SMALL NOTE
+  // consider the possibility of adding thumbnails, have to do add more event info on the page e.g. how many people enrolled so far, perhaps
+  // a rating system for the teacher or the course? perhaps split events and courses and add additional cues to signal just that in the
+  // event list page. as for zoom we can start with manually approving invites while we attend the meetings with a list next to us,
+  //  possibly highlight that it's approved by a very big page and maybe someone else if we get there by then. if we do make seperate 
+  // elements for courses would probably need requirements and highlighting the key points of course as a requirement by the tutor prior to 
+  // purchasing the product, also add a verification for everyone who tries to post their courses/events as a precaution. 
   return (
     <>
       {/* PC VERSION OF THE PAGE */}
@@ -68,7 +70,11 @@ export default function EventInfo({
                       BOOK $20.00
                     </button>
                   </form>
-                  <div>27. Mar 2025</div>
+                  <div>{`${new Date(
+                event.metadata.event_time
+              ).getDate()}. ${getMonthName(
+                new Date(event.metadata.event_time).getMonth()
+              )} ${new Date(event.metadata.event_time).getFullYear()}`}</div>
                   </div>
                 </div>
               </div>
